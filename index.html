@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydraulic Workshop Quotation Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Hydraulic Workshop Quotation Generator</h1>
+        <p>Create a professional service quotation with annexes in seconds.</p>
+      </header>
+
+      <section class="card">
+        <h2>Job Information</h2>
+        <form id="quotation-form" class="form-grid">
+          <label>Customer <input type="text" id="customer" required /></label>
+          <label>Location <input type="text" id="location" required /></label>
+          <label>Job Title <input type="text" id="jobTitle" required /></label>
+          <label class="full">Background <textarea id="background" rows="3" required></textarea></label>
+          <label class="full">Scope of Work <textarea id="scope" rows="4" required></textarea></label>
+
+          <label>Duration <input type="text" id="duration" placeholder="e.g. 10 working days" required /></label>
+
+          <label>Technician Days <input type="number" id="technicianDays" min="0" step="1" value="0" /></label>
+          <label>Technician Rate <input type="number" id="technicianRate" min="0" step="0.01" value="0" /></label>
+
+          <label>Tools Days <input type="number" id="toolsDays" min="0" step="1" value="0" /></label>
+          <label>Tools Rate <input type="number" id="toolsRate" min="0" step="0.01" value="0" /></label>
+
+          <label>Ticket <input type="number" id="ticket" min="0" step="0.01" value="0" /></label>
+          <label>Local Transport <input type="number" id="localTransport" min="0" step="0.01" value="0" /></label>
+          <label>Accommodation <input type="number" id="accommodation" min="0" step="0.01" value="0" /></label>
+          <label>Material <input type="number" id="material" min="0" step="0.01" value="0" /></label>
+          <label>Other Cost <input type="number" id="otherCost" min="0" step="0.01" value="0" /></label>
+
+          <div class="total full">
+            <strong>Grand Total:</strong>
+            <span id="grandTotal">IDR 0</span>
+          </div>
+
+          <div class="actions full">
+            <button type="submit">Generate Quotation</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="output-header">
+          <h2>Generated Quotation</h2>
+          <button id="copyBtn" type="button">Copy</button>
+        </div>
+        <textarea id="quotationOutput" rows="24" readonly placeholder="Generated quotation text will appear here..."></textarea>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
